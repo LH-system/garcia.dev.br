@@ -340,6 +340,54 @@ html.booting body { overflow: hidden; }
 .term-body .prose strong { color: var(--fg); font-weight: 500; }
 .list-dash li::before { content: "- "; color: var(--accent); }
 
+/* ---------- Foto (whoami) ---------- */
+.whoami-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.photo-window { margin: 0; }
+.photo-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg);
+}
+.photo-frame img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) brightness(0.85);
+  transition: filter 0.4s ease;
+}
+/* tinta verde + scanlines por cima da foto */
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0, 0, 0, 0.35) 2px 3px),
+    var(--accent);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+}
+.photo-window:hover .photo-frame img { filter: none; }
+.photo-window:hover .photo-frame::after { opacity: 0.15; }
+.photo-window:hover { border-color: var(--accent); }
+.photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
 /* ---------- Stack modules ---------- */
 .modules {
   display: grid;
@@ -513,6 +561,8 @@ html.booting body { overflow: hidden; }
 @media (max-width: 900px) {
   .nav-list { display: none; }
   .modules, .projects, .lab, .contact { grid-template-columns: minmax(0, 1fr); }
+  .whoami-grid { grid-template-columns: minmax(0, 1fr); }
+  .photo-window { max-width: 240px; }
   .hero-status { grid-template-columns: repeat(2, max-content); }
   .hero-status > div:nth-child(2) { border-right: 0; }
   .hero-status > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
