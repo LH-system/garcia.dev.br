@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luan — Dev full-stack migrando para cibersegurança</title>
+  <meta name="description" content="Portfólio de Luan: desenvolvedor full-stack (PHP, Laravel, TypeScript, React, PostgreSQL, Oracle) em transição para cibersegurança — redes, hardware hacking e projetos.">
+  <meta name="theme-color" content="#060607">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="luan.sys — Dev full-stack → cibersegurança">
+  <meta property="og:description" content="Desenvolvedor full-stack em transição para cibersegurança. Projetos, stack, lab de hardware e certificações.">
+  <meta property="og:image" content="/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: após o deploy, troque por URLs absolutas: https://SEU-DOMINIO/assets/og.png -->
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Roda antes do primeiro paint: decide se mostra o boot -->
+  <script src="js/init.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- ============ BOOT ============ -->
+  <div id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <pre id="boot-log"></pre>
+      <button type="button" id="boot-skip" class="boot-skip">[ESC] pular</button>
+    </div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand"><span class="accent">&gt;</span> luan.sys</a>
+      <nav aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#whoami">whoami</a></li>
+          <li><a href="#stack">stack</a></li>
+          <li><a href="#projetos">projetos</a></li>
+          <li><a href="#certs">certs</a></li>
+          <li><a href="#lab">lab</a></li>
+          <li><a href="#contato">contato</a></li>
+        </ul>
+      </nav>
+      <span class="topbar-status label" aria-hidden="true"><span class="dot"></span> ONLINE<span class="sep"> · </span><span id="clock">--:--:--</span></span>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <canvas id="bitfield" aria-hidden="true"></canvas>
+      <div class="container hero-inner">
+        <div class="hero-meta label" aria-hidden="true">
+          <span>SYS · 00</span><span>BOOT // OK</span><span>BUILD 2026.10</span>
+        </div>
+
+        <h1 id="hero-title" class="sr-only">Luan [sobrenome]</h1>
+        <pre class="ascii ascii-full" data-decode aria-hidden="true">██╗     ██╗   ██╗ █████╗ ███╗   ██╗
+██║     ██║   ██║██╔══██╗████╗  ██║
+██║     ██║   ██║███████║██╔██╗ ██║
+██║     ██║   ██║██╔══██║██║╚██╗██║
+███████╗╚██████╔╝██║  ██║██║ ╚████║
+╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝</pre>
+        <pre class="ascii ascii-compact" data-decode aria-hidden="true">█   █ █ ▄▀█ █▄ █
+█▄▄ █▄█ █▀█ █ ▀█</pre>
+
+        <p class="hero-tagline">
+          <span class="prompt">$</span> Dev full-stack migrando para <span class="accent">cibersegurança</span><span class="cursor" aria-hidden="true">█</span>
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projetos">[ Ver projetos ]</a>
+          <a class="btn" href="#contato">[ Contato ]</a>
+        </div>
+
+        <dl class="hero-status">
+          <div><dt class="label">ROLE</dt><dd>dev → sec</dd></div>
+          <div><dt class="label">EXP</dt><dd>2 anos</dd></div>
+          <div><dt class="label">NODE</dt><dd>Gazin Tech</dd></div>
+          <div><dt class="label">LOC</dt><dd>BR</dd></div>
+        </dl>
+      </div>
+      <a href="#whoami" class="scroll-hint label" aria-label="Rolar para a próxima seção">SCROLL ↓</a>
+    </section>
+
+    <!-- ============ WHOAMI ============ -->
+    <section id="whoami" class="section" aria-labelledby="whoami-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 01 // WHOAMI</span>
+          <h2 id="whoami-title" class="type-title">whoami</h2>
+        </div>
+
+        <div class="whoami-grid">
+        <figure class="term-window photo-window">
+          <div class="term-bar" aria-hidden="true"><span>~/luan.jpg</span><span class="label">IMG</span></div>
+          <div class="photo-frame">
+            <!-- Coloque sua foto em assets/luan.jpg (retrato, ~800x1000px) -->
+            <img src="assets/luan.jpg" alt="Foto de Luan" width="800" height="1000" loading="lazy" decoding="async" onerror="this.remove()">
+            <span class="photo-fallback label" aria-hidden="true">[ NO SIGNAL ]</span>
+          </div>
+        </figure>
+
+        <div class="term-window">
+          <div class="term-bar" aria-hidden="true"><span>luan@sys: ~</span><span class="label">TTY1</span></div>
+          <div class="term-body">
+            <p class="cmd"><span class="prompt">luan@sys:~$</span> whoami</p>
+            <p class="out">luan — desenvolvedor full-stack · trainee de TI · futuro analista de segurança</p>
+
+            <p class="cmd"><span class="prompt">luan@sys:~$</span> cat about.txt</p>
+            <div class="out prose">
+              <p>Sou dev há 2 anos, trabalhando com <strong>PHP, Laravel, JavaScript, TypeScript, React</strong> e bancos <strong>PostgreSQL</strong> e <strong>Oracle</strong>, principalmente no contexto de <strong>ERP</strong>.</p>
+              <p>Atualmente sou <strong>Trainee de TI na Gazin Tech</strong> e curso <strong>Sistemas para Internet</strong> na UniALFA.</p>
+              <p>Estou em transição para <span class="accent">cibersegurança</span>: estudo redes (TCP/IP, DNS, UDP) e hardware hacking com um M5Stack Cardputer ADV + LoRa SX1262 rodando o firmware Bruce. Gosto de entender como as coisas funcionam por baixo e de quebrar (com autorização) para construir melhor.</p>
+            </div>
+
+            <p class="cmd"><span class="prompt">luan@sys:~$</span> cat focus.txt</p>
+            <ul class="out list-dash">
+              <li>redes e protocolos — TCP/IP, DNS, UDP, análise de tráfego</li>
+              <li>hardware hacking — Wi-Fi, BLE, Sub-GHz, RFID</li>
+              <li>segurança em aplicações web — o lado de quem já escreveu o código</li>
+            </ul>
+            <p class="cmd"><span class="prompt">luan@sys:~$</span> <span class="cursor" aria-hidden="true">█</span></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section id="stack" class="section" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 02 // MODULES</span>
+          <h2 id="stack-title" class="type-title">stack</h2>
+        </div>
+
+        <div class="modules">
+          <article class="module card">
+            <header class="module-head">
+              <span class="pixel" data-pixel="server" aria-hidden="true"></span>
+              <div>
+                <span class="label">MODULE // 01</span>
+                <h3 data-scramble>Backend</h3>
+              </div>
+            </header>
+            <ul class="skills">
+              <li><span>PHP</span><span class="bar" data-level="8" role="img" aria-label="Nível 8 de 10">[████████░░]</span></li>
+              <li><span>Laravel</span><span class="bar" data-level="7" role="img" aria-label="Nível 7 de 10">[███████░░░]</span></li>
+              <li><span>Node.js</span><span class="bar" data-level="5" role="img" aria-label="Nível 5 de 10">[█████░░░░░]</span></li>
+              <li><span>ERP / regras de negócio</span><span class="bar" data-level="7" role="img" aria-label="Nível 7 de 10">[███████░░░]</span></li>
+            </ul>
+          </article>
+
+          <article class="module card">
+            <header class="module-head">
+              <span class="pixel" data-pixel="window" aria-hidden="true"></span>
+              <div>
+                <span class="label">MODULE // 02</span>
+                <h3 data-scramble>Frontend</h3>
+              </div>
+            </header>
+            <ul class="skills">
+              <li><span>JavaScript</span><span class="bar" data-level="8" role="img" aria-label="Nível 8 de 10">[████████░░]</span></li>
+              <li><span>TypeScript</span><span class="bar" data-level="7" role="img" aria-label="Nível 7 de 10">[███████░░░]</span></li>
+              <li><span>React</span><span class="bar" data-level="7" role="img" aria-label="Nível 7 de 10">[███████░░░]</span></li>
+              <li><span>HTML / CSS</span><span class="bar" data-level="8" role="img" aria-label="Nível 8 de 10">[████████░░]</span></li>
+            </ul>
+          </article>
+
+          <article class="module card">
+            <header class="module-head">
+              <span class="pixel" data-pixel="db" aria-hidden="true"></span>
+              <div>
+                <span class="label">MODULE // 03</span>
+                <h3 data-scramble>Banco de dados</h3>
+              </div>
+            </header>
+            <ul class="skills">
+              <li><span>SQL</span><span class="bar" data-level="8" role="img" aria-label="Nível 8 de 10">[████████░░]</span></li>
+              <li><span>PostgreSQL</span><span class="bar" data-level="7" role="img" aria-label="Nível 7 de 10">[███████░░░]</span></li>
+              <li><span>Oracle</span><span class="bar" data-level="6" role="img" aria-label="Nível 6 de 10">[██████░░░░]</span></li>
+            </ul>
+          </article>
+
+          <article class="module card">
+            <header class="module-head">
+              <span class="pixel" data-pixel="lock" aria-hidden="true"></span>
+              <div>
+                <span class="label">MODULE // 04</span>
+                <h3 data-scramble>Security</h3>
+              </div>
+            </header>
+            <ul class="skills">
+              <li><span>Redes (TCP/IP, DNS, UDP)</span><span class="bar" data-level="5" role="img" aria-label="Nível 5 de 10">[█████░░░░░]</span></li>
+              <li><span>Linux</span><span class="bar" data-level="5" role="img" aria-label="Nível 5 de 10">[█████░░░░░]</span></li>
+              <li><span>Hardware hacking</span><span class="bar" data-level="4" role="img" aria-label="Nível 4 de 10">[████░░░░░░]</span></li>
+              <li><span>OWASP Top 10</span><span class="bar" data-level="4" role="img" aria-label="Nível 4 de 10">[████░░░░░░]</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <section id="projetos" class="section" aria-labelledby="proj-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 03 // PROJECTS</span>
+          <h2 id="proj-title" class="type-title">projetos</h2>
+        </div>
+
+        <div class="projects">
+          <article class="project card">
+            <div class="project-top label"><span>01 of 04</span><span>SECURITY</span></div>
+            <h3 data-scramble>Honeypot</h3>
+            <p>[Descrição: ex. honeypot SSH/HTTP que registra tentativas de acesso, origem dos IPs e credenciais testadas, com painel de visualização.]</p>
+            <ul class="tags"><li>Python</li><li>Docker</li><li>Linux</li></ul>
+            <div class="project-links">
+              <a href="#" data-placeholder>github ↗</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project-top label"><span>02 of 04</span><span>INTEGRATION</span></div>
+            <h3 data-scramble>Binance API Bridge</h3>
+            <p>[Descrição: ex. integração com a API da Binance para consulta de cotações e histórico, com assinatura HMAC e tratamento de rate limit.]</p>
+            <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>REST</li></ul>
+            <div class="project-links">
+              <a href="#" data-placeholder>github ↗</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project-top label"><span>03 of 04</span><span>PRODUCT</span></div>
+            <h3 data-scramble>SenseiSuite</h3>
+            <p>Sistema de gestão de academias: alunos, planos, mensalidades e controle de presença. [complete com detalhes]</p>
+            <ul class="tags"><li>Laravel</li><li>React</li><li>PostgreSQL</li></ul>
+            <div class="project-links">
+              <a href="#" data-placeholder>github ↗</a>
+              <a href="#" data-placeholder>demo ↗</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project-top label"><span>04 of 04</span><span>[CATEGORIA]</span></div>
+            <h3 data-scramble>[Projeto 4]</h3>
+            <p>[Descrição curta do projeto, problema que resolve e o que você aprendeu.]</p>
+            <ul class="tags"><li>[tag]</li><li>[tag]</li></ul>
+            <div class="project-links">
+              <a href="#" data-placeholder>github ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICAÇÕES ============ -->
+    <section id="certs" class="section" aria-labelledby="certs-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 04 // CERT.LOG</span>
+          <h2 id="certs-title" class="type-title">certificações</h2>
+        </div>
+
+        <ol class="log">
+          <li><time datetime="2025-03-12">[2025-03-12]</time> <span class="ok">CERT_LOADED</span> :: <strong>[Nome da certificação]</strong> :: <span class="muted">[Emissor]</span></li>
+          <li><time datetime="2025-01-01">[2025-01-01]</time> <span class="ok">CERT_LOADED</span> :: <strong>[Nome da certificação]</strong> :: <span class="muted">[Emissor]</span></li>
+          <li><time datetime="2024-01-01">[2024-01-01]</time> <span class="ok">CERT_LOADED</span> :: <strong>[Nome da certificação]</strong> :: <span class="muted">[Emissor]</span></li>
+          <li><span class="muted">[----------]</span> <span class="pending">CERT_PENDING</span> :: <strong>[Próxima meta, ex. CompTIA Security+]</strong> :: <span class="muted">em estudo</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ LAB ============ -->
+    <section id="lab" class="section" aria-labelledby="lab-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 05 // MODULE // HARDWARE</span>
+          <h2 id="lab-title" class="type-title">lab</h2>
+        </div>
+
+        <div class="lab">
+          <figure class="lab-device">
+            <span class="pixel pixel-xl" data-pixel="cardputer" aria-hidden="true"></span>
+            <figcaption class="label">FIG. 01 — M5STACK CARDPUTER ADV + LORA SX1262</figcaption>
+          </figure>
+
+          <div class="lab-info">
+            <dl class="spec">
+              <div><dt class="label">DEVICE</dt><dd>M5Stack Cardputer ADV</dd></div>
+              <div><dt class="label">RADIO</dt><dd>LoRa SX1262</dd></div>
+              <div><dt class="label">FIRMWARE</dt><dd>Bruce</dd></div>
+              <div><dt class="label">MODULES</dt><dd>Wi-Fi · BLE · Sub-GHz · RFID</dd></div>
+            </dl>
+
+            <p>Uso o Cardputer como laboratório de bolso para entender, na prática, como funcionam os protocolos sem fio: varredura de redes Wi-Fi, anúncios BLE, sinais Sub-GHz e leitura de tags RFID. Em paralelo, estudo a base de redes — modelo TCP/IP, resolução DNS, diferenças entre TCP e UDP — capturando e analisando tráfego.</p>
+
+            <div class="notice" role="note">
+              <span class="label">⚠ ETHICS // NOTICE</span>
+              <p>Todos os testes são feitos <strong>apenas em equipamentos próprios ou com autorização explícita</strong>. Interceptar, interferir ou acessar sistemas de terceiros sem permissão é crime (Lei 12.737/2012).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section id="contato" class="section" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SYS · 06 // CONNECT</span>
+          <h2 id="contato-title" class="type-title">contato</h2>
+        </div>
+
+        <div class="contact">
+          <div class="term-window term-interactive">
+            <div class="term-bar" aria-hidden="true"><span>guest@luan.sys: ~</span><span class="label">INTERACTIVE</span></div>
+            <div class="term-body" id="term">
+              <div id="term-out" aria-live="polite">
+                <p class="out muted">Bem-vindo(a) ao luan.sys. Digite <span class="accent">help</span> para ver os comandos.</p>
+              </div>
+              <form id="term-form" class="term-input" autocomplete="off">
+                <label for="term-cmd" class="prompt">guest@luan.sys:~$</label>
+                <input id="term-cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="Comando do terminal">
+              </form>
+            </div>
+          </div>
+
+          <ul class="contact-links">
+            <li><span class="label">GITHUB</span><a href="https://github.com/[usuario]" rel="me noopener" target="_blank">github.com/[usuario] ↗</a></li>
+            <li><span class="label">LINKEDIN</span><a href="https://linkedin.com/in/[usuario]" rel="me noopener" target="_blank">linkedin.com/in/[usuario] ↗</a></li>
+            <li><span class="label">E-MAIL</span><a href="mailto:[email]">[email]</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <pre class="ascii-mini" aria-hidden="true">┌─┐
+│▓│ luan.sys
+└─┘ 01101100 01110101 01100001 01101110</pre>
+      <p class="label">© 2026 luan.sys · feito à mão, sem frameworks</p>
+    </div>
+  </footer>
+</body>
+</html>
